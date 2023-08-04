@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add Contact Page</title>
+</head>
+<body>
+	<section>
+		<div class="card me-5">
+			<div class="card-body">
+				<h1 class="text-center">Add Contact</h1>
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<form class="mt-2" action="#" th:object="${contact}" enctype="multipart/form-data" method="post" th:action="@{/user/process-contact}">
+							<div class="input-group">
+								<span class="input-group-text mr-3"><i class="fa fa-plus"></i></span>
+								<input class="form-control" placeholder="Enter Your Contact Name here" name="name" id="firstname" type="text">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3"><i class="fa fa-user"></i></span>
+								<input class="form-control" placeholder="Enter Your Contact Nickname here" name="nickname" id="nickname" type="text">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3"><i class="fa fa-phone"></i></span>
+								<input class="form-control" placeholder="Enter Your Contact Phone Number here" name="phonenumber" id="phone" type="number">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3"><i class="fa fa-at"></i></span>
+								<input class="form-control" placeholder="Enter Your Contact Email here" name="email" id="email" type="email">
+							</div>
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3"><i class="fa fa-briefcase"></i></span>
+								<input class="form-control" placeholder="Enter Your Contact Work here" name="work" id="work" type="text">
+							</div>
+							<div class="form-floating mt-3">
+								<textarea name="about" class="form-control" placeholder="Enter About Contact here" id="floatingTextarea"></textarea>
+								<label for="floatingTextarea">Enter your discription here</label>
+							</div>
+							<div class="custom-file mt-3">
+								<input type="file" name="image" />
+							</div>
+							<div class="container mt-3 text-center">
+								<button class="btn bg-primary text-white">Save Contact</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
